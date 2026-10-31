@@ -275,18 +275,22 @@
    Typography: Japanese-friendly font stack (replaces "Microsoft Yahei"),
    smaller base size; Layout: left-aligned, wider content column
    ------------------------------------------------------------------ */
-$jp-sans: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
-  'Yu Gothic UI', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif;
+$jp-sans: 'Meiryo', 'Noto Sans JP', 'Yu Gothic UI', 'Yu Gothic',
+  'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', sans-serif;
 
+/* Meiryo first (user preference); Latin falls into Meiryo too on Windows */
 body {
-  font-family: 'Source Sans Pro', $jp-sans;
+  font-family: $jp-sans;
 }
 
 h1, h2, h3, h4, h5,
 #toc-bar .label,
 #search-results a,
-#notification.toast .toast-body {
-  font-family: 'Lato', $jp-sans;
+#notification.toast .toast-body,
+#archives .date.day,
+.pagination,
+kbd {
+  font-family: $jp-sans;
 }
 
 /* Base text: two steps smaller than Chirpy's defaults */
@@ -317,11 +321,19 @@ main h3 { margin: 1.5rem 0 0.75rem; }
 .content table { font-size: 0.9em; }
 .content pre, .content code { font-size: 0.9em; }
 
-/* Layout: hug the sidebar instead of centering; allow a wider column */
+/* Layout: hug the sidebar with no outer gap; allow a wider column */
 @media all and (min-width: 850px) {
   #main-wrapper > .container {
-    max-width: 1500px;
+    max-width: none;
     margin-left: 0;
     margin-right: auto;
+    padding-left: 0 !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media all and (min-width: 1650px) {
+  main.col-12 {
+    padding-right: 1.5rem !important;
   }
 }
