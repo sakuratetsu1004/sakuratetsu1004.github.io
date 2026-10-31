@@ -270,3 +270,58 @@
   padding-top: 0.75rem;
   border-top: 3px solid #d97757;
 }
+
+/* ------------------------------------------------------------------
+   Typography: Japanese-friendly font stack (replaces "Microsoft Yahei"),
+   smaller base size; Layout: left-aligned, wider content column
+   ------------------------------------------------------------------ */
+$jp-sans: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+  'Yu Gothic UI', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif;
+
+body {
+  font-family: 'Source Sans Pro', $jp-sans;
+}
+
+h1, h2, h3, h4, h5,
+#toc-bar .label,
+#search-results a,
+#notification.toast .toast-body {
+  font-family: 'Lato', $jp-sans;
+}
+
+/* Base text: two steps smaller than Chirpy's defaults */
+.content {
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.95rem; }
+
+main h2 { margin: 2rem 0 1rem; }
+main h3 { margin: 1.5rem 0 0.75rem; }
+
+#post-list .card .card-body .card-title { font-size: 1.1rem; }
+#post-list .card .card-body .card-text.content { font-size: 0.9rem; }
+#sidebar .site-title { font-size: 1.5rem; }
+#sidebar .site-subtitle { font-size: 0.9rem; }
+#sidebar ul li.nav-item { font-size: 0.9rem; }
+.post-meta, .post-tail-wrapper { font-size: 0.85rem; }
+#panel-wrapper { font-size: 0.85rem; }
+#toc-wrapper { font-size: 0.85rem; }
+
+/* Tables and code a touch smaller too */
+.content table { font-size: 0.9em; }
+.content pre, .content code { font-size: 0.9em; }
+
+/* Layout: hug the sidebar instead of centering; allow a wider column */
+@media all and (min-width: 850px) {
+  #main-wrapper > .container {
+    max-width: 1500px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
