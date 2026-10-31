@@ -233,18 +233,18 @@
   }
 }
 
-/* Apply: follow the theme's own mode switching rules */
-html:not([data-mode]),
-html[data-mode='light'] {
+/* Apply: Chirpy 7.x switches modes via Bootstrap's data-bs-theme on :root */
+:root:not([data-bs-theme]),
+:root[data-bs-theme='light'] {
   @include cream-light;
 }
 
-html[data-mode='dark'] {
+:root[data-bs-theme='dark'] {
   @include cream-dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) {
+  :root:not([data-bs-theme]) {
     @include cream-dark;
   }
 }
