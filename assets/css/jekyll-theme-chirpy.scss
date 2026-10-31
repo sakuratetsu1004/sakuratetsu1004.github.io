@@ -1,0 +1,272 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* ------------------------------------------------------------------
+   Warm "cream & terracotta" palette
+   Light: ivory background, warm charcoal text, terracotta accent
+   Dark : warm charcoal background, parchment text, soft terracotta accent
+   ------------------------------------------------------------------ */
+
+@mixin cream-light {
+  /* Framework */
+  --main-bg: #f7f5ee;
+  --mask-bg: #c9c4b6;
+  --main-border-color: #e6e2d6;
+
+  /* Common */
+  --text-color: #2b2924;
+  --text-muted-color: #6f6a5e;
+  --heading-color: #1a1916;
+  --label-color: #5c574c;
+  --blockquote-border-color: #d9a690;
+  --blockquote-text-color: #6f6a5e;
+  --link-color: #a84e2b;
+  --link-underline-color: #e3c8bb;
+  --button-bg: #fcfbf7;
+  --btn-border-color: #e3dfd3;
+  --btn-backtotop-color: #6f6a5e;
+  --btn-backtotop-border-color: #e3dfd3;
+  --checkbox-color: #c9c4b6;
+  --checkbox-checked-color: #d97757;
+  --img-bg: radial-gradient(circle, #fcfbf7 0%, #ece9df 100%);
+  --menu-bg: #fcfbf7;
+  --menu-border-color: #e6e2d6;
+  --menu-shadow-color: rgb(60 50 30 / 14%);
+  --menu-active-color: #a84e2b;
+  --menu-highlight-bg: rgb(217 119 87 / 10%);
+
+  /* Sidebar */
+  --site-title-color: #2b2924;
+  --site-subtitle-color: #6f6a5e;
+  --sidebar-bg: #ede9de;
+  --sidebar-border-color: #e0dbcd;
+  --sidebar-muted-color: #5c574c;
+  --sidebar-active-color: #a84e2b;
+  --sidebar-hover-bg: rgb(217 119 87 / 12%);
+  --sidebar-btn-bg: #fcfbf7;
+  --sidebar-btn-color: #6f6a5e;
+  --avatar-border-color: #fcfbf7;
+
+  /* Topbar */
+  --topbar-bg: rgb(247 245 238 / 80%);
+  --topbar-text-color: #4a463d;
+  --search-border-color: #e0dbcd;
+  --search-icon-color: #a39f94;
+  --input-focus-border-color: #d97757;
+
+  /* Home */
+  --post-list-text-color: #5c574c;
+  --btn-patinator-text-color: #4a463d;
+  --btn-paginator-hover-color: var(--sidebar-bg);
+
+  /* Posts */
+  --toc-highlight: #a84e2b;
+  --toc-popup-border-color: #e0dbcd;
+  --btn-share-color: #8a857a;
+  --btn-share-hover-color: #a84e2b;
+  --card-bg: #fcfbf7;
+  --card-hover-bg: #efece3;
+  --card-shadow: rgb(60 50 30 / 6%) 0 2px 6px 0, rgb(60 50 30 / 10%) 0 0 0 1px;
+  --footnote-target-bg: #f3e4d6;
+  --tb-odd-bg: #f1eee5;
+  --tb-border-color: #e0dbcd;
+  --dash-color: #c9c4b6;
+  --kbd-wrap-color: #bdb7a8;
+  --kbd-bg-color: #fcfbf7;
+  --prompt-text-color: rgb(43 41 36 / 85%);
+  --prompt-tip-bg: rgb(120 170 120 / 18%);
+  --prompt-tip-icon-color: #3f8a4a;
+  --prompt-info-bg: rgb(212 162 127 / 22%);
+  --prompt-info-icon-color: #a84e2b;
+  --prompt-warning-bg: rgb(235 219 188 / 55%);
+  --prompt-warning-icon-color: #b8862b;
+  --prompt-danger-bg: rgb(204 120 92 / 18%);
+  --prompt-danger-icon-color: #b0412a;
+
+  /* Tags / Categories / Archive */
+  --tag-border: #e0dbcd;
+  --tag-shadow: var(--btn-border-color);
+  --tag-hover: #ece9df;
+  --search-tag-bg: #f1eee5;
+  --categories-border: rgb(60 50 30 / 12%);
+  --categories-hover-bg: var(--btn-border-color);
+  --categories-icon-hover-color: #a84e2b;
+  --timeline-color: rgb(60 50 30 / 10%);
+  --timeline-node-bg: #d4a27f;
+  --timeline-year-dot-color: #fcfbf7;
+
+  /* Code */
+  --language-border-color: #e0dbcd;
+  --highlight-bg-color: #efece3;
+  --highlighter-rouge-color: #7a4a35;
+  --highlight-lineno-color: #a39f94;
+  --inline-code-bg: rgb(120 90 60 / 9%);
+  --code-color: #2b2924;
+  --code-header-text-color: #8a857a;
+  --code-header-muted-color: #ddd8ca;
+  --code-header-icon-color: #b5afa0;
+  --clipboard-checked-color: #3f8a4a;
+
+  .highlight,
+  .highlight .w {
+    background-color: var(--highlight-bg-color);
+  }
+}
+
+@mixin cream-dark {
+  /* Framework */
+  --main-bg: #262624;
+  --mask-bg: #3a3936;
+  --main-border-color: #3a3936;
+
+  /* Common */
+  --text-color: #e6e3da;
+  --text-muted-color: #a39f94;
+  --text-muted-highlight-color: #f2f0e8;
+  --heading-color: #f2f0e8;
+  --label-color: #c9c4b6;
+  --blockquote-border-color: #8c5a44;
+  --blockquote-text-color: #a39f94;
+  --link-color: #e89b7a;
+  --link-underline-color: #6a4a3c;
+  --button-bg: #2e2d2a;
+  --btn-border-color: #3f3e3a;
+  --btn-backtotop-color: #c9c4b6;
+  --btn-backtotop-border-color: #3f3e3a;
+  --checkbox-color: #5c5a54;
+  --checkbox-checked-color: #d97757;
+  --img-bg: radial-gradient(circle, #2e2d2a 0%, #1f1e1c 100%);
+  --menu-bg: #2e2d2a;
+  --menu-border-color: #3f3e3a;
+  --menu-shadow-color: rgb(0 0 0 / 40%);
+  --menu-active-color: #e89b7a;
+  --menu-highlight-bg: rgb(217 119 87 / 14%);
+
+  /* Sidebar */
+  --site-title-color: #f2f0e8;
+  --site-subtitle-color: #a39f94;
+  --sidebar-bg: #1f1e1c;
+  --sidebar-border-color: #2e2d2a;
+  --sidebar-muted-color: #a39f94;
+  --sidebar-active-color: #e89b7a;
+  --sidebar-hover-bg: rgb(217 119 87 / 14%);
+  --sidebar-btn-bg: #2e2d2a;
+  --sidebar-btn-color: #c9c4b6;
+  --avatar-border-color: #3f3e3a;
+
+  /* Topbar */
+  --topbar-bg: rgb(38 38 36 / 80%);
+  --topbar-text-color: #c9c4b6;
+  --search-border-color: #3f3e3a;
+  --search-icon-color: #8a857a;
+  --input-focus-border-color: #d97757;
+
+  /* Home */
+  --post-list-text-color: #c9c4b6;
+  --btn-patinator-text-color: #c9c4b6;
+  --btn-paginator-hover-color: #2e2d2a;
+
+  /* Posts */
+  --toc-highlight: #e89b7a;
+  --toc-popup-border-color: #3f3e3a;
+  --btn-share-color: #8a857a;
+  --btn-share-hover-color: #e89b7a;
+  --card-bg: #2e2d2a;
+  --card-hover-bg: #363532;
+  --card-shadow: rgb(0 0 0 / 30%) 0 2px 6px 0, rgb(255 255 255 / 4%) 0 0 0 1px;
+  --footnote-target-bg: #3f3128;
+  --tb-odd-bg: #2b2a27;
+  --tb-border-color: #3f3e3a;
+  --dash-color: #5c5a54;
+  --kbd-wrap-color: #5c5a54;
+  --kbd-bg-color: #2e2d2a;
+  --prompt-text-color: rgb(230 227 218 / 85%);
+  --prompt-tip-bg: rgb(120 170 120 / 16%);
+  --prompt-tip-icon-color: #7fbf86;
+  --prompt-info-bg: rgb(212 162 127 / 16%);
+  --prompt-info-icon-color: #e89b7a;
+  --prompt-warning-bg: rgb(235 219 188 / 14%);
+  --prompt-warning-icon-color: #d9b25a;
+  --prompt-danger-bg: rgb(204 120 92 / 16%);
+  --prompt-danger-icon-color: #e0745a;
+
+  /* Tags / Categories / Archive */
+  --tag-border: #3f3e3a;
+  --tag-shadow: #1f1e1c;
+  --tag-hover: #363532;
+  --search-tag-bg: #2e2d2a;
+  --categories-border: rgb(255 255 255 / 10%);
+  --categories-hover-bg: #363532;
+  --categories-icon-hover-color: #e89b7a;
+  --timeline-color: rgb(255 255 255 / 10%);
+  --timeline-node-bg: #8c5a44;
+  --timeline-year-dot-color: #262624;
+
+  /* Code */
+  --language-border-color: #3f3e3a;
+  --highlight-bg-color: #1f1e1c;
+  --highlighter-rouge-color: #e8b59a;
+  --highlight-lineno-color: #6e6a60;
+  --inline-code-bg: rgb(255 255 255 / 7%);
+  --code-color: #e6e3da;
+  --code-header-text-color: #8a857a;
+  --code-header-muted-color: #3f3e3a;
+  --code-header-icon-color: #6e6a60;
+  --clipboard-checked-color: #7fbf86;
+
+  .highlight,
+  .highlight .w {
+    background-color: var(--highlight-bg-color);
+  }
+}
+
+/* Apply: follow the theme's own mode switching rules */
+html:not([data-mode]),
+html[data-mode='light'] {
+  @include cream-light;
+}
+
+html[data-mode='dark'] {
+  @include cream-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    @include cream-dark;
+  }
+}
+
+/* Accent details */
+.post-content a:not(.img-link),
+.post-meta a {
+  text-decoration-color: var(--link-underline-color);
+}
+
+#sidebar .site-title a:hover,
+#sidebar .nav-link:hover {
+  color: var(--sidebar-active-color);
+}
+
+#sidebar .nav-item.active .nav-link {
+  color: var(--sidebar-active-color);
+  font-weight: 600;
+}
+
+/* Thin terracotta rule above the post title area */
+.post > h1[data-toc-skip] {
+  padding-top: 0.75rem;
+  border-top: 3px solid #d97757;
+}
