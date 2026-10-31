@@ -2,8 +2,9 @@
 layout: post
 title: "Ubuntu 26.04 (GNOME 50) を RDP で使う: 解像度の壁をヘッドレスモードで越え、日本語入力を fcitx5 で安定させるまで"
 date: 2026-11-01 02:00:00 +0900
-categories: [linux]
+categories: [Linux, GNOME]
 tags: [ubuntu, gnome, rdp, gnome-remote-desktop, fcitx5, mozc, vmware]
+description: VMware上のUbuntu 26.04をRDPで使う際の、解像度制限(ヘッドレスモードで解決)と日本語入力(IBus→fcitx5、半角/全角キー問題)の記録。
 ---
 
 VMware 上の Ubuntu 26.04 LTS (GNOME 50) を Windows から RDP で操作する環境を整えた記録。

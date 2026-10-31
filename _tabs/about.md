@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
-permalink: /about/
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
 ---
 
 ネットワークエンジニアの作業メモです。手順そのものより「なぜそうなったか」「何を試して駄目だったか」を残すようにしています。
