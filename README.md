@@ -20,3 +20,8 @@ description: 一覧・SEO用の短い説明 (任意)
 - 目次 (TOC) は H2/H3 から自動生成
 - 画像は `assets/img/posts/` に置いて `![alt](/assets/img/posts/xxx.png)`
 - 固定ページ (About 等) は `_tabs/`
+
+## 運用文書
+
+- `CLAUDE.md` — Claude Code 向けの運用メモ(記事の書き方、見た目の上書き箇所、注意点)
+- `docs/HANDOVER.md` — 引継ぎ資料(構成・設定の理由・カスタマイズの詳細・権限まわり)

@@ -218,6 +218,8 @@ exclude:
   - docs
   - tools
   - README.md
+  - CLAUDE.md
+  - LICENSE-chirpy-starter
   - LICENSE
   - purgecss.js
   - "*.config.js"
