@@ -1,0 +1,29 @@
+title: sakuratetsu1004 notes
+description: ネットワーク/インフラまわりの作業メモ。ハマったことと、その回避策を残す場所。
+lang: ja
+url: "https://sakuratetsu1004.github.io"
+baseurl: ""
+author: sakuratetsu1004
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+minima:
+  date_format: "%Y-%m-%d"
+  social_links:
+    github: sakuratetsu1004
+
+header_pages:
+  - about.md
+
+permalink: /:year/:month/:title/
+show_excerpts: true
+timezone: Asia/Tokyo
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
